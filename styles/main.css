@@ -1,0 +1,205 @@
+/* San Joaquin Valley Town Hall - A08 Chapter 6 */
+
+/* Custom properties */
+:root {
+    --accent-color: #800000;
+    --gradient-color: #f6bb73;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(90% + .2vw);
+    line-height: 1.5;
+    width: 80%;
+    max-width: 1024px;
+    margin: 0 auto;
+    border: 2px solid var(--accent-color);
+}
+
+a:hover,
+a:focus {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    padding: .25em 0;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+h2 {
+    font-size: 130%;
+    color: var(--accent-color);
+}
+
+h3 {
+    font-size: 105%;
+}
+
+ul {
+    margin-left: 2em;
+}
+
+/* Header */
+header {
+    border-bottom: 2px solid var(--accent-color);
+    line-height: 1.2;
+    background-image: linear-gradient(
+        30deg,
+        var(--gradient-color) 0%,
+        white 30%,
+        white 65%,
+        var(--gradient-color) 100%
+    );
+}
+
+header img {
+    float: left;
+    width: 15%;
+    min-width: 40px;
+    max-width: 80px;
+    height: auto;
+    margin: .75em 1em;
+}
+
+header h2 {
+    font-size: 175%;
+    padding: .5em 0 0;
+}
+
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+    padding-bottom: 1em;
+}
+
+.large {
+    font-size: 125%;
+}
+
+/* Main two-column Flexbox layout */
+main {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 1em 1em;
+}
+
+aside {
+    flex: 0 0 25%;
+    padding-right: 1em;
+}
+
+section {
+    flex: 0 0 75%;
+    min-width: 0;
+}
+
+/* Guest speaker images */
+aside img {
+    display: block;
+    width: 100%;
+    min-width: 40px;
+    max-width: 75px;
+    height: auto;
+    border: 4px double var(--accent-color);
+    border-radius: 10px;
+    margin: .25em 0 .75em;
+}
+
+/* Mission and featured speaker */
+blockquote {
+    font-style: italic;
+    padding: .25em 1em;
+}
+
+.featured {
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding: .5em 0;
+}
+
+.featured img,
+.speaker img {
+    float: right;
+    width: 45%;
+    min-width: 100px;
+    max-width: 250px;
+    height: auto;
+    border: 4px double var(--accent-color);
+    border-radius: 10px;
+    margin: 0 0 .75em 1em;
+}
+
+/* Exercise 6-2 speaker page */
+.speaker h1 {
+    color: var(--accent-color);
+}
+
+.speaker h2 {
+    color: black;
+}
+
+.speaker p {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+/* Footer */
+footer {
+    clear: both;
+    background-color: var(--accent-color);
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    padding: 1em 0;
+}
+
+/* Small screens: stack the columns */
+@media (max-width: 600px) {
+    body {
+        width: 95%;
+    }
+
+    main {
+        display: block;
+    }
+
+    aside,
+    section {
+        width: 100%;
+    }
+
+    aside {
+        padding-right: 0;
+        border-bottom: 1px solid var(--accent-color);
+        margin-bottom: 1em;
+    }
+
+    aside img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .5em;
+    }
+
+    .featured img,
+    .speaker img {
+        width: 40%;
+    }
+}
